@@ -1,0 +1,19 @@
+{
+    "name": "user/page-protector",
+    "description": "This is a client requirement plugin to help their custom need",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Arif32-dev",
+            "email": "dragonwarrior062@gmail.com"
+        }
+    ],
+    "minimum-stability": "stable",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "PP\\Includes\\": "Includes/",
+            "PP\\Templates\\": "Templates/"
+        }
+    }
+}
