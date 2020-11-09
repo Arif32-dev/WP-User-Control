@@ -14,7 +14,8 @@ class Registration_Form {
     }
     public static function registration_form() { ?>
         <div id="container pp_container">
-            <h4>final Messge goes here</h4>
+            <div id="alert_box">
+            </div>
             <form action="" method="POST" id="pp_form">
                 <?php wp_nonce_field('pp_form_submit_action', 'pp_form_nonce'); ?>
                 <div class="form-row">
@@ -33,10 +34,7 @@ class Registration_Form {
                 </div>
                 <div class="form-group">
                     <label for="user_password">Password</label>
-                    <input type="password" name="user_password" required class="form-control is-invalid" id="user_password" placeholder="Enter your email">
-                    <div class="invalid-feedback">
-                        Please choose a username.
-                    </div>
+                    <input type="password" name="user_password" required class="form-control" id="user_password" placeholder="Enter your email">
                 </div>
                 <button type="submit" class="btn btn-secondary">Sign Up</button>
             </form>

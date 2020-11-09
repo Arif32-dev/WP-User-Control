@@ -1,6 +1,7 @@
 ; (function ($) {
     const app = {
         userCreationForm: $('#pp_form'),
+        alertBox: $('#alert_box'),
 
         init: () => {
             app.events();
@@ -22,9 +23,26 @@
                 type: 'post',
                 success: res => {
                     console.log(res);
+                    if (res == 'success')
+                        app.alertBox.html(`
+                                <div class="alert alert-success" role="alert">
+                                    Account Created Successfully. Wait for admin response.
+                                </div>
+                            `).hide().slideDown();
+                    else
+                        app.alertBox.html(`
+                                <div class="alert alert-danger" role="alert">
+                                    ${res.replace(/"/g, "")}
+                                </div>
+                            `).hide().slideDown();
+
                 },
                 error: err => {
-                    alert('Something went wrong');
+                    app.alertBox.html(`
+                                <div class="alert alert-danger" role="alert">
+                                    Something Went Wrong.
+                                </div>
+                            `).hide().slideDown();
                 }
             })
         }

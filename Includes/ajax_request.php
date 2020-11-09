@@ -51,10 +51,18 @@ class Ajax_Request {
             ]
         );
 
-        if (is_int($userID))
+        if (is_int($userID)) {
             echo 'success';
-        else
-            echo 'failed';
+        } else {
+            if (array_key_exists("existing_user_login", $userID->errors)) {
+                if ($userID->errors['existing_user_login'][0])
+                    echo json_encode(sanitize_text_field($userID->errors['existing_user_login'][0]));
+            }
+            if (array_key_exists("existing_user_email", $userID->errors)) {
+                if ($userID->errors['existing_user_email'][0])
+                    echo json_encode(sanitize_text_field($userID->errors['existing_user_email'][0]));
+            }
+        }
 
         wp_die();
     }

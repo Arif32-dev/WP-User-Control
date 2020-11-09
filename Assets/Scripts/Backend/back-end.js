@@ -9,7 +9,8 @@
         },
         select: () => {
             new SlimSelect({
-                select: '#multiple'
+                select: '#multiple',
+                placeholder: 'Select Accessible User'
             })
         }
     };
