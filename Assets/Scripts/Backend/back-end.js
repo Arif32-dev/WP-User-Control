@@ -14,6 +14,6 @@
         }
     };
 
-    document.addEventListener('DOMContentLoaded', backend.init);
+    backend.init();
 
 })(jQuery);
