@@ -92,7 +92,10 @@ final class PP_Plugin {
      */
     public function including_class() {
         new PP\Templates\Registration_Form;
-        new PP\Includes\Frontend\Enqeue_Files;
+        new PP\Includes\Enqeue_Files;
+        new PP\Includes\Ajax_Request;
+        new PP\Includes\Protect_Pages;
+        new PP\Includes\Meta_Fields;
     }
 }
 

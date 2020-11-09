@@ -16,23 +16,24 @@ class Registration_Form {
         <div id="container pp_container">
             <h4>final Messge goes here</h4>
             <form action="" method="POST" id="pp_form">
+                <?php wp_nonce_field('pp_form_submit_action', 'pp_form_nonce'); ?>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="user_full_name">Name: </label>
-                        <input type="text" class="form-control" name="user_full_name" id="user_full_name" placeholder="Enter your name">
+                        <input type="text" class="form-control" required name="user_full_name" id="user_full_name" placeholder="Enter your name">
                     </div>
                     <div class="form-group col-md-6">
                         <label for="user_name">Username: </label>
-                        <input type="text" name="user_name" class="form-control" id="user_name" placeholder="Enter your username">
+                        <input type="text" name="user_name" required class="form-control" id="user_name" placeholder="Enter your username">
                     </div>
                 </div>
                 <div class="form-group">
                     <label for="user_email">Email:</label>
-                    <input type="email" class="form-control" name="user_email" id="user_email" placeholder="Enter your email">
+                    <input type="email" class="form-control" required name="user_email" id="user_email" placeholder="Enter your email">
                 </div>
                 <div class="form-group">
                     <label for="user_password">Password</label>
-                    <input type="password" name="user_password" class="form-control is-invalid" id="user_password" placeholder="Enter your email">
+                    <input type="password" name="user_password" required class="form-control is-invalid" id="user_password" placeholder="Enter your email">
                     <div class="invalid-feedback">
                         Please choose a username.
                     </div>
