@@ -40,6 +40,7 @@ if (!defined('PP_BASE_URL'))
 
 if (!file_exists(PP_BASE_PATH . 'vendor/autoload.php'))
     return;
+
 require_once PP_BASE_PATH . 'vendor/autoload.php';
 
 final class PP_Plugin {

@@ -8,24 +8,16 @@ if (!defined('ABSPATH'))
 
 class Protect_Pages {
     public function __construct() {
-        add_action('init', [$this, 'init_hook_callback']);
+        add_action('wp_body_open', [$this, 'protect_pages']);
     }
-    public function init_hook_callback() {
-        add_shortcode('pp_protect_page', [__CLASS__, 'protect_page']);
-    }
-    public static function protect_page() {
-        if (!is_user_logged_in())
-            wp_die("<h1>You don't have access to view this page</h1>");
-
-        $pageID = get_the_ID();
-
+    public static function protect_pages() {
+        $pageID = get_queried_object_id();
+        $home_url = home_url();
         if (get_post_type($pageID) === 'page') {
             $permissible_users = get_post_meta($pageID, '_permissible_users', true);
-            if (!$permissible_users) {
-                wp_die("<h1>You don't have access to view this page</h1>");
-            } else {
+            if ($permissible_users) {
                 if (!in_array(get_current_user_id(), $permissible_users)) {
-                    wp_die("<h1>You don't have access to view this page</h1>");
+                    wp_die("<h1>You don't have access to view this page</h1><br><a href='$home_url' >Return to Home</a>");
                 }
             }
         }

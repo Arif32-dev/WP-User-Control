@@ -10,7 +10,7 @@ class Registration_Form {
         add_action('init', [$this, 'init_hook_callback']);
     }
     public function init_hook_callback() {
-        add_shortcode('pp_registration_form', [__CLASS__, 'registration_form']);
+        add_shortcode('wp_user_control_form', [__CLASS__, 'registration_form']);
     }
     public static function registration_form() { ?>
         <div id="container pp_container">

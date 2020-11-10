@@ -47,7 +47,7 @@ class Ajax_Request {
                 'rich_editing' => 'false',
                 'syntax_highlighting' => 'false',
                 'show_admin_bar_front' => 'false',
-                'role' => ''
+                'role' => 'Subscriber'
             ]
         );
 
