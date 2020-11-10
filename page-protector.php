@@ -1,12 +1,12 @@
 <?php
 
 /**
- * Page Protector
+ * WP User Control
  * @author Arifur Rahman Arif
  * @wordpress-plugin
- * Plugin Name: Page Protector
+ * Plugin Name: WP User Control
  * Plugin URI: https://wppool.dev/
- * Description: This plugin is created based on client reqirements to protect wordpress pages
+ * Description: This plugin's purpose is to protect WordPress pages from unwanted visitors
  * Version: 1.0.0
  * Requires at least: 5.0
  * Requires PHP: 5.6

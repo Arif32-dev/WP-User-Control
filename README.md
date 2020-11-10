@@ -1,4 +1,4 @@
-Page Protector
+WP User Control
 @author Arifur Rahman Arif from WPPOOL at https://wppool.dev/
 
 Usage of this plugin.
