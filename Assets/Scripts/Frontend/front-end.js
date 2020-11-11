@@ -1,7 +1,7 @@
 ; (function ($) {
     const app = {
         userCreationForm: $('#pp_form'),
-        alertBox: $('#alert_box'),
+        alertBox: $('#wpuc_alert_box'),
 
         init: () => {
             app.events();
@@ -24,24 +24,18 @@
                 success: res => {
                     console.log(res);
                     if (res == 'success')
-                        app.alertBox.html(`
-                                <div class="alert alert-success" role="alert">
-                                    Account Created Successfully. Wait for admin response.
-                                </div>
+                        app.alertBox.removeClass('wpuc_fail').addClass('wpuc_success').html(`
+                                    Account Created Successfully.
                             `).hide().slideDown();
                     else
-                        app.alertBox.html(`
-                                <div class="alert alert-danger" role="alert">
+                        app.alertBox.removeClass('wpuc_success').addClass('wpuc_fail').html(`
                                     ${res.replace(/"/g, "")}
-                                </div>
                             `).hide().slideDown();
 
                 },
                 error: err => {
-                    app.alertBox.html(`
-                                <div class="alert alert-danger" role="alert">
+                    app.alertBox.removeClass('wpuc_success').addClass('wpuc_fail').html(`
                                     Something Went Wrong.
-                                </div>
                             `).hide().slideDown();
                 }
             })
