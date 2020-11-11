@@ -2,8 +2,9 @@
 
 namespace WPUC\Includes;
 
-if (!defined('ABSPATH'))
+if (!defined('ABSPATH')) {
     die('you cant access this plugin directly');
+}
 
 class Meta_Fields {
     public function __construct() {
@@ -78,8 +79,10 @@ class Meta_Fields {
 
         /* Does current user have capabitlity to edit post */
         $post_type = get_post_type_object($post_object->post_type);
-        if (!current_user_can($post_type->cap->edit_post, $post_id))
+
+        if (!current_user_can($post_type->cap->edit_post, $post_id)) {
             return $post_id;
+        }
 
         /* Get the posted data and check it for uses. */
         $new_meta_value = (isset($_POST['meta_users']) ? $_POST['meta_users'] : "");
@@ -90,26 +93,26 @@ class Meta_Fields {
         /* Get the meta value of the custom field key. */
         $meta_value = get_post_meta($post_id, $meta_key, true);
 
-        /* If a new meta value was added and there was no previous value, add it. */
-        if ($new_meta_value && "" == $meta_value)
+        if ($new_meta_value && "" == $meta_value) {
+            /* If a new meta value was added and there was no previous value, add it. */
             add_post_meta($post_id, $meta_key, $new_meta_value);
-
-        /* If the new meta value does not match the old value, update it. */
-        elseif ($new_meta_value && $new_meta_value != $meta_value)
+        } elseif ($new_meta_value && $new_meta_value != $meta_value) {
+            /* If the new meta value does not match the old value, update it. */
             update_post_meta($post_id, $meta_key, $new_meta_value);
-
-        /* If there is no new meta value but an old value exists, delete it. */
-        elseif ("" == $new_meta_value && $meta_value)
+        } elseif ("" == $new_meta_value && $meta_value) {
+            /* If there is no new meta value but an old value exists, delete it. */
             delete_post_meta($post_id, $meta_key, $meta_value);
+        }
     }
 
     public static function echo_select($permissible_users, int $user_id) {
-        if (!is_array($permissible_users))
+        if (!is_array($permissible_users)) {
             return;
-
-        if (in_array($user_id, $permissible_users))
+        }
+        if (in_array($user_id, $permissible_users)) {
             echo 'selected';
-        else
+        } else {
             echo '';
+        }
     }
 }

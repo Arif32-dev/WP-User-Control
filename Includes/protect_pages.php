@@ -2,8 +2,9 @@
 
 namespace WPUC\Includes;
 
-if (!defined('ABSPATH'))
+if (!defined('ABSPATH')) {
     die('you cant access this plugin directly');
+}
 
 
 class Protect_Pages {

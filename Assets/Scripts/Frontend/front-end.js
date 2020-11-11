@@ -23,15 +23,15 @@
                 type: 'post',
                 success: res => {
                     console.log(res);
-                    if (res == 'success')
+                    if (res == 'success') {
                         app.alertBox.removeClass('wpuc_fail').addClass('wpuc_success').html(`
                                     Account Created Successfully.
                             `).hide().slideDown();
-                    else
+                    } else {
                         app.alertBox.removeClass('wpuc_success').addClass('wpuc_fail').html(`
                                     ${res.replace(/"/g, "")}
                             `).hide().slideDown();
-
+                    }
                 },
                 error: err => {
                     app.alertBox.removeClass('wpuc_success').addClass('wpuc_fail').html(`

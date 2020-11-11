@@ -12,21 +12,24 @@ class Ajax_Request {
         add_action('wp_ajax_nopriv_wpuc_form_submit', [$this, 'wpuc_form_submit']);
     }
     public function wpuc_form_submit() {
-        if ($_POST['action'] != 'wpuc_form_submit')
+        if ($_POST['action'] != 'wpuc_form_submit') {
             wp_die();
+        }
 
         parse_str($_POST['form_data'], $parsed_data);
 
-        if (!isset($parsed_data['pp_form_nonce']) || !wp_verify_nonce($parsed_data['pp_form_nonce'],  'pp_form_submit_action'))
+        if (!isset($parsed_data['pp_form_nonce']) || !wp_verify_nonce($parsed_data['pp_form_nonce'],  'pp_form_submit_action')) {
             wp_die();
+        }
 
         if (
             (!isset($parsed_data['user_full_name']) && $parsed_data['user_full_name'] == "") ||
             (!isset($parsed_data['user_name']) && $parsed_data['user_name'] == "") ||
             (!isset($parsed_data['user_email']) && $parsed_data['user_email'] == "") ||
             (!isset($parsed_data['user_password']) && $parsed_data['user_password'] == "")
-        )
+        ) {
             wp_die('empty_field');
+        }
 
         $sanitzed_parsed_data = [
             'user_full_name' => sanitize_text_field($parsed_data['user_full_name']),

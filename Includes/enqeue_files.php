@@ -4,8 +4,9 @@ namespace WPUC\Includes;
 
 /* if accessed directly exit from plugin */
 
-if (!defined('ABSPATH'))
+if (!defined('ABSPATH')) {
     die('you cant access this plugin directly');
+}
 
 class Enqeue_Files {
     public function __construct() {

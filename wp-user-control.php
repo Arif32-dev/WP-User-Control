@@ -25,20 +25,25 @@
  */
 
 /* if accessed directly exit from plugin */
-if (!defined('ABSPATH'))
+if (!defined('ABSPATH')) {
     die('you cant access this plugin directly');
+}
 
-if (!defined('WPUC_VERSION'))
+if (!defined('WPUC_VERSION')) {
     define('WPUC_VERSION', '1.0.0');
+}
 
-if (!defined('WPUC_BASE_PATH'))
+if (!defined('WPUC_BASE_PATH')) {
     define('WPUC_BASE_PATH', plugin_dir_path(__FILE__));
+}
 
-if (!defined('WPUC_BASE_URL'))
+if (!defined('WPUC_BASE_URL')) {
     define('WPUC_BASE_URL', plugin_dir_url(__FILE__));
+}
 
-if (!file_exists(WPUC_BASE_PATH . 'vendor/autoload.php'))
+if (!file_exists(WPUC_BASE_PATH . 'vendor/autoload.php')) {
     return;
+}
 
 require_once WPUC_BASE_PATH . 'vendor/autoload.php';
 

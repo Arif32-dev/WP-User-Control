@@ -5,24 +5,10 @@
     justify-content: flex-start;
     padding: 20px;
 }
-.form-row{
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-}
+
 .form-group{
     width: 100%;
     padding: 10px;
-}
-.form-row input {
-    margin-left: 10px;
-    height: 45px;
-    border-radius: 4px;
-    -webkit-border-radius: 4px;
-    -moz-border-radius: 4px;
-    -ms-border-radius: 4px;
-    -o-border-radius: 4px;
 }
 .form-group.vertical input {
     height: 45px;

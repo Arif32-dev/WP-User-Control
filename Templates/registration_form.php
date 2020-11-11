@@ -2,8 +2,9 @@
 
 namespace WPUC\Templates;
 
-if (!defined('ABSPATH'))
+if (!defined('ABSPATH')) {
     die('you cant access this plugin directly');
+}
 
 class Registration_Form {
     public function __construct() {
@@ -18,15 +19,13 @@ class Registration_Form {
             </div>
             <form action="" method="POST" id="pp_form">
                 <?php wp_nonce_field('pp_form_submit_action', 'pp_form_nonce'); ?>
-                <div class="form-row">
-                    <div class="form-group col-md-6">
-                        <label for="user_full_name">Name: </label>
-                        <input type="text" class="form-control" required name="user_full_name" id="user_full_name" placeholder="Enter your name">
-                    </div>
-                    <div class="form-group col-md-6">
-                        <label for="user_name">Username: </label>
-                        <input type="text" name="user_name" required class="form-control" id="user_name" placeholder="Enter your username">
-                    </div>
+                <div class="form-group vertical">
+                    <label for="user_full_name">Name: </label>
+                    <input type="text" class="form-control" required name="user_full_name" id="user_full_name" placeholder="Enter your name">
+                </div>
+                <div class="form-group vertical">
+                    <label for="user_name">Username: </label>
+                    <input type="text" name="user_name" required class="form-control" id="user_name" placeholder="Enter your username">
                 </div>
                 <div class="form-group vertical">
                     <label for="user_email">Email:</label>
