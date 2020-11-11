@@ -7,26 +7,30 @@ namespace Composer\Autoload;
 class ComposerStaticInit43c2b1a9c479ce00298ddc71bf69d108
 {
     public static $prefixLengthsPsr4 = array (
-        'P' => 
+        'W' => 
         array (
-            'PP\\Templates\\' => 13,
-            'PP\\Includes\\' => 12,
+            'WPUC\\Templates\\' => 15,
+            'WPUC\\Includes\\' => 14,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
-        'PP\\Templates\\' => 
+        'WPUC\\Templates\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Templates',
         ),
-        'PP\\Includes\\' => 
+        'WPUC\\Includes\\' => 
         array (
             0 => __DIR__ . '/../..' . '/Includes',
         ),
     );
 
     public static $classMap = array (
-        'PP\\Templates\\Registration_Form' => __DIR__ . '/../..' . '/Templates/registration_form.php',
+        'WPUC\\Includes\\Ajax_Request' => __DIR__ . '/../..' . '/Includes/ajax_request.php',
+        'WPUC\\Includes\\Enqeue_Files' => __DIR__ . '/../..' . '/Includes/enqeue_files.php',
+        'WPUC\\Includes\\Meta_Fields' => __DIR__ . '/../..' . '/Includes/meta_fields.php',
+        'WPUC\\Includes\\Protect_Pages' => __DIR__ . '/../..' . '/Includes/protect_pages.php',
+        'WPUC\\Templates\\Registration_Form' => __DIR__ . '/../..' . '/Templates/registration_form.php',
     );
 
     public static function getInitializer(ClassLoader $loader)

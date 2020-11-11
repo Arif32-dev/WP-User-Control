@@ -1,6 +1,6 @@
 <?php
 
-namespace PP\Includes;
+namespace WPUC\Includes;
 
 if (!defined('ABSPATH'))
     die('you cant access this plugin directly');
@@ -8,11 +8,11 @@ if (!defined('ABSPATH'))
 class Ajax_Request {
     public function __construct() {
         /* Form submission ajax request */
-        add_action('wp_ajax_pp_form_submit', [$this, 'pp_form_submit']);
-        add_action('wp_ajax_nopriv_pp_form_submit', [$this, 'pp_form_submit']);
+        add_action('wp_ajax_wpuc_form_submit', [$this, 'wpuc_form_submit']);
+        add_action('wp_ajax_nopriv_wpuc_form_submit', [$this, 'wpuc_form_submit']);
     }
-    public function pp_form_submit() {
-        if ($_POST['action'] != 'pp_form_submit')
+    public function wpuc_form_submit() {
+        if ($_POST['action'] != 'wpuc_form_submit')
             wp_die();
 
         parse_str($_POST['form_data'], $parsed_data);
@@ -47,7 +47,7 @@ class Ajax_Request {
                 'rich_editing' => 'false',
                 'syntax_highlighting' => 'false',
                 'show_admin_bar_front' => 'false',
-                'role' => 'Subscriber'
+                'role' => 'subscriber'
             ]
         );
 

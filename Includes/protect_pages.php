@@ -1,6 +1,6 @@
 <?php
 
-namespace PP\Includes;
+namespace WPUC\Includes;
 
 if (!defined('ABSPATH'))
     die('you cant access this plugin directly');

@@ -1,5 +1,5 @@
 WP User Control
-@author Arifur Rahman Arif from WPPOOL at https://wppool.dev/
+@author Arifur Rahman Arif from WPPOOL at keendevs.com
 
 Usage of this plugin.
 
@@ -13,5 +13,3 @@ With this sortcode your website will have custom registration form in the front-
 With this pluign you can protect your pages from unwanted visitor. Just simply check users from a page you want to give access and rest of the user or mass people can't access that page.
 
 Admin will have ability to give permission to specific users for specific pages. No need to use private pages anymore.
-
-For any question contact the developer at http://hypercode.epizy.com/

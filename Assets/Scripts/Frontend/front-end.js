@@ -17,7 +17,7 @@
             $.ajax({
                 url: file_url.admin_ajax,
                 data: {
-                    action: 'pp_form_submit',
+                    action: 'wpuc_form_submit',
                     form_data: formData
                 },
                 type: 'post',

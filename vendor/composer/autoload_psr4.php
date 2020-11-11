@@ -6,6 +6,6 @@ $vendorDir = dirname(dirname(__FILE__));
 $baseDir = dirname($vendorDir);
 
 return array(
-    'PP\\Templates\\' => array($baseDir . '/Templates'),
-    'PP\\Includes\\' => array($baseDir . '/Includes'),
+    'WPUC\\Templates\\' => array($baseDir . '/Templates'),
+    'WPUC\\Includes\\' => array($baseDir . '/Includes'),
 );

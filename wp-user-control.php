@@ -5,14 +5,13 @@
  * @author Arifur Rahman Arif
  * @wordpress-plugin
  * Plugin Name: WP User Control
- * Plugin URI: https://wppool.dev/
  * Description: This plugin's purpose is to protect WordPress pages from unwanted visitors
  * Version: 1.0.0
  * Requires at least: 5.0
  * Requires PHP: 5.6
  * Author: Arifur Rahman Arif
- * Author URI: https://www.linkedin.com/in/arifur-rahman-arif-51222a1b8/
- * Text Domain: pp
+ * Plugin URI: keendevs.com
+ * Text Domain: WPUC
  * License: GPL v2 or later
  * License URI: http://www.gnu.org/licenses/gpl-2.0.txt
  */
@@ -29,21 +28,21 @@
 if (!defined('ABSPATH'))
     die('you cant access this plugin directly');
 
-if (!defined('PP_VERSION'))
-    define('PP_VERSION', '1.0.0');
+if (!defined('WPUC_VERSION'))
+    define('WPUC_VERSION', '1.0.0');
 
-if (!defined('PP_BASE_PATH'))
-    define('PP_BASE_PATH', plugin_dir_path(__FILE__));
+if (!defined('WPUC_BASE_PATH'))
+    define('WPUC_BASE_PATH', plugin_dir_path(__FILE__));
 
-if (!defined('PP_BASE_URL'))
-    define('PP_BASE_URL', plugin_dir_url(__FILE__));
+if (!defined('WPUC_BASE_URL'))
+    define('WPUC_BASE_URL', plugin_dir_url(__FILE__));
 
-if (!file_exists(PP_BASE_PATH . 'vendor/autoload.php'))
+if (!file_exists(WPUC_BASE_PATH . 'vendor/autoload.php'))
     return;
 
-require_once PP_BASE_PATH . 'vendor/autoload.php';
+require_once WPUC_BASE_PATH . 'vendor/autoload.php';
 
-final class PP_Plugin {
+final class WPUC_Plugin {
 
     public function __construct() {
         require_once ABSPATH . 'wp-admin/includes/plugin.php';
@@ -92,20 +91,20 @@ final class PP_Plugin {
      * @return void
      */
     public function including_class() {
-        new PP\Templates\Registration_Form;
-        new PP\Includes\Enqeue_Files;
-        new PP\Includes\Ajax_Request;
-        new PP\Includes\Protect_Pages;
-        new PP\Includes\Meta_Fields;
+        new WPUC\Templates\Registration_Form;
+        new WPUC\Includes\Enqeue_Files;
+        new WPUC\Includes\Ajax_Request;
+        new WPUC\Includes\Protect_Pages;
+        new WPUC\Includes\Meta_Fields;
     }
 }
 
-if (!class_exists('PP_Plugin'))
+if (!class_exists('WPUC_Plugin'))
     return;
 
-if (!function_exists('PP_plugin_init')) {
-    function PP_plugin_init() {
-        return new PP_Plugin;
+if (!function_exists('WPUC_plugin_init')) {
+    function WPUC_plugin_init() {
+        return new WPUC_Plugin;
     }
 }
-PP_plugin_init();
+WPUC_plugin_init();

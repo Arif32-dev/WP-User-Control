@@ -1,6 +1,6 @@
 <?php
 
-namespace PP\Templates;
+namespace WPUC\Templates;
 
 if (!defined('ABSPATH'))
     die('you cant access this plugin directly');
