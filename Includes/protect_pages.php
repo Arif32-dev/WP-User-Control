@@ -9,9 +9,9 @@ if (!defined('ABSPATH')) {
 
 class Protect_Pages {
     public function __construct() {
-        add_action('wp_body_open', [$this, 'protect_pages']);
+        add_action('wp_head', [$this, 'protect_pages']);
     }
-    public static function protect_pages() {
+    public function protect_pages() {
         $pageID = get_queried_object_id();
         $home_url = home_url();
         if (get_post_type($pageID) === 'page') {
