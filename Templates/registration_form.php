@@ -8,17 +8,14 @@ if (!defined('ABSPATH')) {
 
 class Registration_Form {
     public function __construct() {
-        add_action('init', [$this, 'init_hook_callback']);
+        add_shortcode('wp_user_control_form', [$this, 'registration_form']);
     }
-    public function init_hook_callback() {
-        add_shortcode('wp_user_control_form', [__CLASS__, 'registration_form']);
-    }
-    public static function registration_form() { ?>
-        <div id="container pp_container">
+    public function registration_form() {
+        $form = '<div id="container pp_container">
             <div id="wpuc_alert_box">
             </div>
             <form action="" method="POST" id="pp_form">
-                <?php wp_nonce_field('pp_form_submit_action', 'pp_form_nonce'); ?>
+                ' . wp_nonce_field('pp_form_submit_action', 'pp_form_nonce', true, false) . '
                 <div class="form-group vertical">
                     <label for="user_full_name">Name: </label>
                     <input type="text" class="form-control" required name="user_full_name" id="user_full_name" placeholder="Enter your name">
@@ -37,7 +34,7 @@ class Registration_Form {
                 </div>
                 <button type="submit" class="btn btn-secondary">Sign Up</button>
             </form>
-        </div>
-<?php
+        </div>';
+        return $form;
     }
 }
