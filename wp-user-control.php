@@ -75,6 +75,7 @@ final class WPUC_Plugin {
     public function plugins_check() {
         if (is_plugin_active(plugin_basename(__FILE__))) {
             $this->including_class();
+            add_filter('plugin_action_links_' . plugin_basename(__FILE__), [__CLASS__, 'add_action_links']);
         }
     }
 
@@ -101,6 +102,13 @@ final class WPUC_Plugin {
         new WPUC\Includes\Ajax_Request;
         new WPUC\Includes\Protect_Pages;
         new WPUC\Includes\Meta_Fields;
+        new WPUC\Includes\Menu_Page;
+    }
+    public static function add_action_links($links) {
+        $mylinks = array(
+            '<a href="' . admin_url('options-general.php?page=wp_user_control') . '">Settigns Page</a>',
+        );
+        return array_merge($links, $mylinks);
     }
 }
 
