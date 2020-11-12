@@ -28,6 +28,7 @@ class ComposerStaticInit43c2b1a9c479ce00298ddc71bf69d108
     public static $classMap = array (
         'WPUC\\Includes\\Ajax_Request' => __DIR__ . '/../..' . '/Includes/ajax_request.php',
         'WPUC\\Includes\\Enqeue_Files' => __DIR__ . '/../..' . '/Includes/enqeue_files.php',
+        'WPUC\\Includes\\Menu_Page' => __DIR__ . '/../..' . '/Includes/menu_page.php',
         'WPUC\\Includes\\Meta_Fields' => __DIR__ . '/../..' . '/Includes/meta_fields.php',
         'WPUC\\Includes\\Protect_Pages' => __DIR__ . '/../..' . '/Includes/protect_pages.php',
         'WPUC\\Templates\\Registration_Form' => __DIR__ . '/../..' . '/Templates/registration_form.php',
