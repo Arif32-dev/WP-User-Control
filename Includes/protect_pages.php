@@ -9,6 +9,8 @@ if (!defined('ABSPATH')) {
 
 class Protect_Pages {
     public function __construct() {
+        ob_clean();
+        ob_start();
         add_shortcode('wpuc_protect_page', [$this, 'protect_pages']);
     }
     public function protect_pages() {
