@@ -3,7 +3,7 @@ WP User Control
 
 Usage of this plugin.
 
-To use this plugin there are 1 shortcode available for this plugin.
+To use this plugin there are 2 shortcode available for this plugin.
 
 Sortcode: [wp_user_control_form]
 
