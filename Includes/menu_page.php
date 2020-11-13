@@ -61,8 +61,9 @@ class Menu_Page {
 
         <tr>
             <b>
-                <p>To use this plugin there are 1 shortcode available for this plugin.</p>
+                <p>To use this plugin there are 2 shortcode available for this plugin..</p>
             </b>
+
             <b>
                 <i>
                     Sortcode: [wp_user_control_form]
@@ -72,6 +73,20 @@ class Menu_Page {
             <p>
                 With this sortcode your website will have custom registration form in the front-end. Where people can register their account as a subscriber
             </p>
+
+            <br>
+            <br>
+
+            <b>
+                <i>
+                    Sortcode: [wpuc_protect_page]
+                </i>
+            </b>
+            <br>
+            <p>
+                With this sortcode you can protect your pages from unwanted visitor. Just simply use this sortcode on which page you want to restrict from mass user and want to give accces to your selected specific person.
+            </p>
+
             <br>
             <br>
             <br>

@@ -11,7 +11,7 @@ class Registration_Form {
         add_shortcode('wp_user_control_form', [$this, 'registration_form']);
     }
     public function registration_form() {
-        $form = '<div id="container pp_container">
+        $form = '<div class="container pp_container">
             <div id="wpuc_alert_box">
             </div>
             <form action="" method="POST" id="pp_form">
