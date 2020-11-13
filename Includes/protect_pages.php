@@ -12,24 +12,10 @@ class Protect_Pages {
         ob_clean();
         ob_start();
         add_shortcode('wpuc_protect_page', [$this, 'protect_pages']);
+        add_action('the_content', [$this, 'content_filtering']);
     }
     public function protect_pages() {
-        $pageID = get_queried_object_id();
-        $home_url = home_url();
-        $custom_url = get_option('wpuc_redirect_url') ? get_option('wpuc_redirect_url') : $home_url;
-        if (get_post_type($pageID) === 'page') {
-            $permissible_users = get_post_meta($pageID, '_permissible_users', true);
-            if ($permissible_users) {
-                if (!in_array(get_current_user_id(), $permissible_users)) {
-                    if (is_user_logged_in()) {
-                        wp_safe_redirect($custom_url);
-                    } else {
-                        echo self::login_form($home_url);
-                        wp_die(get_footer());
-                    }
-                }
-            }
-        }
+        return;
     }
     public static function login_form() {
         $form = '<div class="container pp_container">
@@ -49,5 +35,26 @@ class Protect_Pages {
             </form>
         </div>';
         return $form;
+    }
+    public function content_filtering($content) {
+        $pageID = get_queried_object_id();
+        $home_url = home_url();
+        $custom_url = get_option('wpuc_redirect_url') ? get_option('wpuc_redirect_url') : $home_url;
+
+        if (has_shortcode($content, 'wpuc_protect_page')) {
+            if (get_post_type($pageID) === 'page') {
+                $permissible_users = get_post_meta($pageID, '_permissible_users', true);
+                if ($permissible_users) {
+                    if (!in_array(get_current_user_id(), $permissible_users)) {
+                        if (is_user_logged_in()) {
+                            wp_safe_redirect($custom_url);
+                        } else {
+                            $content = self::login_form();
+                        }
+                    }
+                }
+            }
+        }
+        return $content;
     }
 }

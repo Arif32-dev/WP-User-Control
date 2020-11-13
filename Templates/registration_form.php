@@ -30,7 +30,7 @@ class Registration_Form {
                 </div>
                 <div class="form-group vertical">
                     <label for="user_password">Password</label>
-                    <input type="password" name="user_password" required class="form-control" id="user_password" placeholder="Enter your email">
+                    <input type="password" name="user_password" required class="form-control" id="user_password" placeholder="Enter your password">
                 </div>
                 <button type="submit" class="btn btn-secondary">Sign Up</button>
             </form>
