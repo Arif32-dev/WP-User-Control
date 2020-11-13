@@ -16,7 +16,6 @@ class Protect_Pages {
     public function protect_pages() {
         $pageID = get_queried_object_id();
         $home_url = home_url();
-        $login_url = wp_login_url();
         $custom_url = get_option('wpuc_redirect_url') ? get_option('wpuc_redirect_url') : $home_url;
         if (get_post_type($pageID) === 'page') {
             $permissible_users = get_post_meta($pageID, '_permissible_users', true);
@@ -44,7 +43,7 @@ class Protect_Pages {
                     <input style="padding: 3px 20px;" type="text" class="form-control" required name="user_login" id="user_login" placeholder="Enter your email or username">
                 </div>
                 <div class="form-group vertical">
-                    <label for="user_password">Password</label>
+                    <label for="user_password">Password: </label>
                     <input style="padding: 3px 20px;" type="password" name="user_password" required class="form-control" id="user_password" placeholder="Enter your password">
                 </div>
                 <button type="submit" class="btn btn-secondary">Sign In</button>
@@ -74,8 +73,8 @@ class Protect_Pages {
                             if (res == 'success') {
                                 alert_box.removeClass('wpuc_fail').addClass('wpuc_success').html(`
                                     Logged In Successfully,
-                                    `).hide().slideDown(400, function() {
-                                    window.location.href = '<?php echo home_url() ?>';
+                                    `).hide().slideDown(500, function() {
+                                    location.reload();
                                 });
                             } else {
                                 alert_box.removeClass('wpuc_success').addClass('wpuc_fail').html(`
