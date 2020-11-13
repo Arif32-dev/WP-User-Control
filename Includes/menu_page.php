@@ -16,7 +16,7 @@ class Menu_Page {
             'options-general.php',
             'WP User Control',
             'WP User Control',
-            'manage_optionss',
+            'manage_options',
             'wp_user_control',
             [__CLASS__, 'user_control_page']
         );
