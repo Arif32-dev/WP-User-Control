@@ -1,6 +1,10 @@
 .pp_container{
     width: 100%;
 }
+.pp_container > h4{
+    text-align: center;
+    color: #e15e26;
+}
 #pp_form, #pp_form_login {
     position: relative;
     display: flex;
@@ -25,7 +29,7 @@
 	color:#000;
 }
 .form-group.vertical input {
-    width: 100%;
+    width: 300px;
     margin: 10px 0;
     height: 45px;
     border-radius: 4px;
@@ -61,6 +65,7 @@
 	border-radius:5px;
     padding: 15px 30px;
     cursor: pointer;
+    width: 300px;
 }
 #pp_form button:hover{
 	color:#e15e26;

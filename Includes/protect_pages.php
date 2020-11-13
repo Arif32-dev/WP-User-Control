@@ -19,16 +19,15 @@ class Protect_Pages {
     }
     public static function login_form() {
         $form = '<div class="container pp_container">
+            <h4>Please sign in to access the page</h4>
             <div id="wpuc_alert_box_login">
             </div>
             <form action="" method="POST" id="pp_form_login">
                 ' . wp_nonce_field('wpuc_form_login_action', 'wpuc_login_form_nonce', true, false) . '
                 <div class="form-group vertical">
-                    <label for="user_login">Email:</label>
                     <input style="padding: 3px 20px;" type="text" class="form-control" required name="user_login" id="user_login" placeholder="Enter your email or username">
                 </div>
                 <div class="form-group vertical">
-                    <label for="user_password">Password: </label>
                     <input style="padding: 3px 20px;" type="password" name="user_password" required class="form-control" id="user_password" placeholder="Enter your password">
                 </div>
                 <button type="submit" class="btn btn-secondary">Sign In</button>

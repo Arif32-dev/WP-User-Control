@@ -4,6 +4,8 @@
         login_form: $('#pp_form_login'),
         alertBox: $('#wpuc_alert_box'),
         login_alert_box: $('#wpuc_alert_box_login'),
+        login_submit_button: $('#pp_form_login > button'),
+        create_submit_button: $('#pp_form > button'),
 
         init: () => {
             app.events();
@@ -24,8 +26,12 @@
                     form_data: formData
                 },
                 type: 'post',
+                beforeSend: () => {
+                    app.create_submit_button.html('Signing Up...');
+                },
                 success: res => {
                     console.log(res);
+                    app.create_submit_button.html('Sign Up');
                     if (res == 'success') {
                         app.alertBox.removeClass('wpuc_fail').addClass('wpuc_success').html(`
                                     Account Created Successfully.
@@ -53,8 +59,12 @@
                     form_data: formData
                 },
                 type: 'post',
+                beforeSend: () => {
+                    app.login_submit_button.html('Loging In...');
+                },
                 success: res => {
                     console.log(res);
+                    app.login_submit_button.html('Sign In');
                     if (res == 'success') {
                         app.login_alert_box.removeClass('wpuc_fail').addClass('wpuc_success').html(`
                                     Logged In Successfully,
