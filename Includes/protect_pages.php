@@ -48,6 +48,7 @@ class Protect_Pages {
                         if (is_user_logged_in()) {
                             wp_safe_redirect($custom_url);
                         } else {
+                            self::style_fix();
                             $content = self::login_form();
                         }
                     }
@@ -55,5 +56,14 @@ class Protect_Pages {
             }
         }
         return $content;
+    }
+    public static function style_fix() {
+?>
+        <style>
+            .entry-title {
+                display: none;
+            }
+        </style>
+<?php
     }
 }
